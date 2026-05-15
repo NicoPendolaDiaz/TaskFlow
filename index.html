@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>TaskFlow | Nico - Enterprise Solutions</title>
+    <title>TaskFlow | Nico Péndola Díaz - Enterprise Solutions</title>
     <!-- Google Fonts: Poppins & Inter -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inter:wght@300;400;500&display=swap"
@@ -27,7 +27,7 @@
         </a>
         <div class="ms-auto d-flex align-items-center">
           <span class="badge bg-electric-blue me-2">Módulo 4</span>
-          <span class="text-secondary small">Nico Péndola</span>
+          <span class="text-secondary small">Nico Péndola Díaz</span>
         </div>
       </div>
     </nav>
@@ -132,6 +132,12 @@
               >
                 Completadas
               </button>
+              <button
+                class="btn btn-outline-danger btn-sm"
+                data-filter="deleted"
+              >
+                Eliminados
+              </button>
             </div>
           </div>
 
@@ -144,6 +150,81 @@
         </section>
       </div>
     </main>
+
+    <!-- Modal de Ficha de Tarea (Espacio de Trabajo) -->
+    <div class="modal fade" id="editModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content glass-card">
+          <div class="modal-header border-0">
+            <h5 class="modal-title text-cyan fw-bold">🚀 FICHA DE TRABAJO | TASKFLOW</h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="row g-4">
+              <!-- Izquierda: Edición Básica -->
+              <div class="col-md-6 border-end border-secondary border-opacity-25">
+                <form id="editForm">
+                  <input type="hidden" id="editTaskId" />
+                  <div class="mb-3">
+                    <label for="editTaskTitle" class="form-label small text-secondary">Título de la Tarea</label>
+                    <input type="text" class="form-control glass-input fw-bold" id="editTaskTitle" required />
+                  </div>
+                  <div class="mb-3">
+                    <label for="editTaskCategory" class="form-label small text-secondary">Categoría</label>
+                    <select class="form-select glass-input" id="editTaskCategory" required>
+                      <option value="Frontend">Frontend</option>
+                      <option value="Backend">Backend</option>
+                      <option value="Design">Diseño</option>
+                      <option value="Security">Seguridad</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="editTaskDescription" class="form-label small text-secondary">Descripción General</label>
+                    <textarea class="form-control glass-input" id="editTaskDescription" rows="4"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-cyan w-100 fw-bold py-2 shadow-neon">
+                    GUARDAR CAMBIOS CABECERA
+                  </button>
+                  <button type="button" id="btnCompleteFromModal" class="btn btn-outline-success w-100 py-2 mt-2">
+                    ✅ TAREA COMPLETADA
+                  </button>
+                  <hr class="border-secondary opacity-25 my-3">
+                  <button type="button" id="btnDeleteFromModal" class="btn btn-outline-danger w-100 py-2">
+                    🗑️ ELIMINAR ESTA TAREA
+                  </button>
+                </form>
+              </div>
+
+              <!-- Derecha: Log de Actividad / Anotaciones -->
+              <div class="col-md-6">
+                <h6 class="text-uppercase text-cyan small fw-bold mb-3">📋 Log de Trabajo / Anotaciones</h6>
+                <div id="notesContainer" class="notes-log mb-3 pe-2">
+                  <!-- Notas se inyectarán aquí -->
+                  <div class="text-center py-4 text-secondary opacity-50 small">
+                    Sin anotaciones registradas.
+                  </div>
+                </div>
+                
+                <div class="mt-auto">
+                  <label for="newNote" class="form-label small text-secondary">Nueva Anotación</label>
+                  <div class="input-group">
+                    <textarea class="form-control glass-input" id="newNote" rows="2" placeholder="Describe avances o cambios..."></textarea>
+                    <button class="btn btn-outline-info" type="button" id="btnAddNote">
+                      ADD
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Modal de Sugerencia (API) -->
     <div class="modal fade" id="apiModal" tabindex="-1" aria-hidden="true">
@@ -162,7 +243,7 @@
             <p id="apiContent" class="fs-5 italic"></p>
             <hr class="border-secondary opacity-25" />
             <p class="small text-secondary mb-0">
-              - Generado asíncronamente para Nico -
+              - Generado asíncronamente para Nico Péndola Díaz -
             </p>
           </div>
         </div>

@@ -1,6 +1,6 @@
 # ⚡ TaskFlow | Enterprise Task Manager
 
-![Nico Standards](https://img.shields.io/badge/Standards-Nico%20Architect-00FFFF?style=for-the-badge)
+![Nico Standards](https://img.shields.io/badge/Standards-Nico%20Péndola%20Díaz-00FFFF?style=for-the-badge)
 ![JS Module 4](https://img.shields.io/badge/Módulo-04%20JS-0080FF?style=for-the-badge)
 ![Tech Stack](https://img.shields.io/badge/Stack-Bootstrap--jQuery--OOP-white?style=for-the-badge)
 

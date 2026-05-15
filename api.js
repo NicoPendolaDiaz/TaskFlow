@@ -1,6 +1,6 @@
 /**
  * TaskFlow - API integration
- * Author: Nico (Architect)
+ * Author: Nico Péndola Díaz
  */
 
 export const fetchDailySugerence = async () => {
